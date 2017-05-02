@@ -4,6 +4,7 @@ In this exercise, you will create a simple HTML page with a title, a headline, t
 
 
 1. Set the title of the page to "A simple HTML page".
+
         ([Information about the `title` tag](https://www.w3schools.com/tags/tag_title.asp).)
 
 
