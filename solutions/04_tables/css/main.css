@@ -1,0 +1,13 @@
+td {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+
+td.cat {
+  color: #cc0000;
+}
+
+td.dog {
+  color: #0000cc;
+}
