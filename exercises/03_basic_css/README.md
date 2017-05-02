@@ -16,10 +16,10 @@ See [this page](https://www.w3schools.com/cssref/css_selectors.asp) for more inf
 ## Steps
 
 1. Include the stylesheet `css/main.css` into the HTML document. This should change all the fonts to Helvetica (or some other sans-serif font if you don't have Helvetica installed).<br/>
-  (See information about the `link` tag](https://www.w3schools.com/tags/tag_link.asp))
+  (See [information about the `link` tag](https://www.w3schools.com/tags/tag_link.asp))
 
 2. Change the color of all links (`a` elements) to `red`. You won't have to edit anything in the HTML; all of this can be done in the CSS stylesheet)<br/>
-  (See information about the `color` CSS attribute](https://www.w3schools.com/cssref/pr_text_color.asp), and see [this page](https://www.w3schools.com/cssref/css_colors.asp) for a list of common colors)
+  (See [information about the `color` CSS attribute](https://www.w3schools.com/cssref/pr_text_color.asp), and see [this page](https://www.w3schools.com/cssref/css_colors.asp) for a list of common colors)
 
 3. Change the [color](https://www.w3schools.com/cssref/pr_text_color.asp), the [background](https://www.w3schools.com/cssref/pr_background-color.asp) and the [font size](https://www.w3schools.com/cssref/pr_font_font-size.asp) of the first paragraph and the fifth paragraph. This will involve adding something to the CSS file as well as adding something to the HTML file (Hint: classes!). Feel free to change these properties to any values; I used a dark red for the text `#cc0000`, set the font size to `20px` and set the background to a light gray `#cccccc`.
 
