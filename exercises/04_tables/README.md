@@ -1,4 +1,4 @@
-# Tables
+# Exercise 4: Tables
 
 In this exercise you will create a simple table with images in the first row and captions in the second row.
 Use the skeleton in `exercises/04_tables/exercise.html`.

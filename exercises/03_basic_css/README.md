@@ -1,4 +1,4 @@
-# Basic HTML and CSS
+# Exercise 3: Basic HTML and CSS
 
 In this exercise, you will include a CSS stylesheet into a HTML document, and you will edit both the HTML and the CSS to change the appearance of some of the paragraphs, some words, and links. Use the skeleton in `exercises/03_basic_css/exercise.html`.
 
