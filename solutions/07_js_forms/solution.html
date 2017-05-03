@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/functions.js" charset="utf-8"></script>
+    <title>HTML Form</title>
+  </head>
+  <body>
+    <h1>A Form</h1>
+    <form action="#" onsubmit="return false;">
+      <p><label>Name*: <input type="text" name="name" id="name-input" /></label></p>
+      <p class="error" id="name-error">Please enter a name!</p>
+      <p>Age*:
+        <label><input type="radio" class="age-input" name="age" value="0-20" />0-20 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="21-40" />21-40 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="41-60" />41-60 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="61+" />61+ yrs </label>
+      </p>
+      <p class="error" id="age-error">Please select your age!</p>
+      <p>
+        <label>Your life story:<br/>
+          <textarea name="story" cols="60" rows="4" id="story-input"></textarea>
+        </label>
+      </p>
+      <p>Favorite colors:
+        <label><input type="checkbox" class="favorite-colors-input" name="likes-green" value="green" />green</label>
+        <label><input type="checkbox" class="favorite-colors-input" name="likes-blue" value="blue" />blue</label>
+        <label><input type="checkbox" class="favorite-colors-input" name="likes-red" value="red" />red</label>
+        <label><input type="checkbox" class="favorite-colors-input" name="likes-yellow" value="yellow" />yellow</label>
+      </p>
+      <p><label for="occupation-input">Occupation:</label>
+        <select name="occupation" id="occupation-input">
+          <option value="a student">student</option>
+          <option value="an employee">employed</option>
+          <option value="unemployed">unemployed</option>
+          <option value="a retiree">retired</option>
+        </select>
+
+      </p>
+
+      <input type="button" value="Submit" id="submit-button" onclick="submitForm();">
+
+    </form>
+
+
+    <div id="response">
+      <p>Hi <span id="response-name">###</span>,</p>
+
+      <p>I think it is great that <span id="response-story">###</span></p>
+      <p id="favorite-colors-sentence">I see you like <span id="favorite-colors-response"></span> -- me too!</p>
+      <p>Good luck with being <span id="response-occupation">###</span>! </p>
+    </div>
+  </body>
+</html>
