@@ -1,0 +1,22 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+
+.highlight {
+  color: #cc0000;
+  font-size: 20px;
+  background: #cccccc;
+}
+
+#alternative-highlight {
+  color: #0000cc;
+}
+
+a {
+  color: red;
+}
+
+.special {
+  font-weight: bold;
+}
