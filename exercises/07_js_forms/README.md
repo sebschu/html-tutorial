@@ -17,30 +17,30 @@ see, I put a `div` element around the response on the bottom of the page. A `div
 is basically just a box that can encapsulate other elements and you can hide and
 make appear all of these elements but hiding or showing the containing `div`.
 
-  There are several ways of setting up the page. One method is to use CSS and
-  to hide elements by setting the `display` property to `none` as follows.
+   There are several ways of setting up the page. One method is to use CSS and
+   to hide elements by setting the `display` property to `none` as follows.
 
-  ```
-  .error {
-    display: none;
-  }
-  ```
+   ```
+   .error {
+     display: none;
+   }
+   ```
 
-  This will hide all elements that have the `error` class, which in this case
-  are all error messages. Another way of hiding elements when the page is being
-  loaded is to use Javascript and to define a function that is being executed
-  when the page is being loaded. You can define such a function within any
-  Javascript file that you include as follows.
+   This will hide all elements that have the `error` class, which in this case
+   are all error messages. Another way of hiding elements when the page is being
+   loaded is to use Javascript and to define a function that is being executed
+   when the page is being loaded. You can define such a function within any
+   Javascript file that you include as follows.
 
-  ```
-  $(document).ready(function() {
-      //do some things when the page is loading  
-  });
-  ```
+   ```
+   $(document).ready(function() {
+       //do some things when the page is loading  
+   });
+   ```
 
-  As there is currently no CSS file included in the skeleton document, use
-  the second option (JS) to hide error messages and everything that is part of
-  the response. You should see only the form when you load the page.
+   As there is currently no CSS file included in the skeleton document, use
+   the second option (JS) to hide error messages and everything that is part of
+   the response. You should see only the form when you load the page.
 
 2. Make sure that the user actually enters a name and selects an age, and display
    an error message otherwise.
@@ -121,4 +121,95 @@ make appear all of these elements but hiding or showing the containing `div`.
    entering anything.
 
 
-   3. 
+3. Show a response based on the user input. Now you will use the values that a user
+entered and show them a response message based on these values.
+
+   To do this, you just have to add a few lines to `handleButtonClick`. There are
+   two main steps involved. First, you will replace the content of the `span` elements
+   with the `response-story`, `response-name`, and `response-occupation` ids.
+   Then you will have to show the `response` container, so that it actually
+   displays the message.
+
+   To replace the content of an element, you can use either the `text` function
+   or the `html` function. The former can just be used for text; the latter can
+   also contain HTML elements. For example, to replace the text of `response-name`
+   with _Bob_, you would use the following code.
+
+   ```
+      $("#response-name").text("Bob");
+   ```
+
+   If you wanted to insert an image instead, you could use the following code:
+
+   ```
+     $("#response-name").html('<img src="bob.jpg" width="100" height="100">');
+   ```
+
+   (Make sure to use single quotation marks `'` at the beginning and the end
+   if you use quotation marks within a string.)
+
+   With this information, you should now be able to extend your code so that
+   the response gets populated with the values from the form and that it gets
+   displayed when the user clicks the button.
+
+4. Do some fine-tuning. There are probably still a few things that are not ideal
+   at this point. Even if the user does not enter a name, the response will still
+   appear. Also, the error messages won't go away once you correct your input.
+   Fix both of these things. To prevent displaying the response if validation fails,
+   you can make use of the fact that `validateForm` returns `true` or `false`, depending
+   on whether validation succeeds or not. (That's why you added these `return` statements to
+   `validateForm` -- go back to this function and try to understand when the function returns `true`
+   and when it returns `false`).
+
+   We can therefore use `validateForm` to check whether we should stop running `handleButtonClick`
+   before it displays the response. Replace your call to `validateForm` with the following code.
+
+   ```
+      if (validateForm() == false) {
+        return;
+      }
+
+   ```
+
+   This code runs `validateForm` and if validation fails, it returns from `handleButtonClick`, i.e.,
+   it stops executing the function at this point.
+
+   The second thing you want to fix is that error messages disappear when a user clicks on the button again.
+   You can do this by hiding all error messages at the top of `handleButtonClick` (importantly above your call to `validateForm` -- try to understand why)
+   and also hide the response at this stage.
+
+5. Clear the form after it was successfully submitted. One more step that you
+   can do is clearing the form after it was successfully submitted. Currently,
+   all the values remain in the inputs when you click on the button. To reset the form,
+   you will have to reset the values of the individual inputs.
+
+   To clear the text from a text input or a text box, you can set its value to `null`:
+
+   ```
+      $("#name-input").val(null);
+   ```
+
+   To un-check all radio buttons or checkboxes, include the following code:
+
+   ```
+     $("input[type=radio]").attr("checked", null);
+     $("input[type=checkbox]").attr("checked", null);
+   ```
+
+   Ideally you would put all of these calls in a function `clearForm`, which you
+   then call from `handleButtonClick`. But you can also just put all of the functionality
+   directly into `handleButtonClick`.
+
+
+6. (This is a bit more challenging and feel free to skip this/just look at the
+  solution if you get stuck). Add a sentence "I see you like COLORS -- me too!"
+  to the response. This should only be shown if a user checks one of the
+  checkboxes and instead of COLORS you should display all the colors that a user
+  selected joined by "and". (Hint: Useful functions are the [`each` function](https://api.jquery.com/each/), which
+  can be used to iterate through a list of elements and the
+  [`join`](https://www.w3schools.com/jsref/jsref_join.asp) function, which can
+  be used to convert a list into a string by joining all the elements and putting
+  some defined string between two elements.)
+
+  There are many other things you could do to improve this application. For example, you could use
+  CSS to style the form, the messages and the response.
