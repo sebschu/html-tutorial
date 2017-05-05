@@ -27,7 +27,7 @@ function clearForm() {
     $("select").val("");
 }
 
-function handleButtonClick() {
+function submitForm() {
 
   //hide previous response (if it exists)
   $("#response").hide();
