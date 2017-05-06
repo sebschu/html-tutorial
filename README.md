@@ -16,3 +16,6 @@
 
 7. Javascript and Forms [(exercise)](https://github.com/sebschu/html-tutorial/tree/master/exercises/07_js_forms) [(solution)](https://nlp.stanford.edu/~sebschu/html-tutorial/solutions/07_js_forms/solution.html)
 
+8. Playing Audio [(exercise)](https://github.com/sebschu/html-tutorial/tree/master/exercises/08_basic_audio) [(solution)](https://nlp.stanford.edu/~sebschu/html-tutorial/solutions/08_basic_audio/solution.html)
+
+9. Audio and Javascript [(exercise)](https://github.com/sebschu/html-tutorial/tree/master/exercises/09_js_audio) [(solution)](https://nlp.stanford.edu/~sebschu/html-tutorial/solutions/09_js_audio/solution.html)
